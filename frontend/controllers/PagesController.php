@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 use Yii;
 use backend\models\ServicesSearch;
+use backend\models\ContactSearch;
 use backend\models\PortovolioSearch;
 use backend\models\Services;
 
@@ -24,7 +25,7 @@ class PagesController extends \yii\web\Controller
             'model' => $this->findModel($id),
         ]);
     }
-     public function actionPortofolio()
+    public function actionPortofolio()
     {
     	$searchModel = new PortovolioSearch();
     	$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
@@ -41,6 +42,16 @@ class PagesController extends \yii\web\Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    public function actionContact()
+    {
+        $searchModel = new ContactSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('contact', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
       
 

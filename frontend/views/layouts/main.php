@@ -58,11 +58,11 @@ AppAsset::register($this);
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="<?= Url::to(['site/']) ?>">Home</a></li>
+          <li class=""><a href="<?= Url::to(['site/']) ?>">Home</a></li>
           <li><a href="<?= Url::to(['pages/portofolio']) ?>">Portofolio</a></li>
           <li><a href="<?= Url::to(['pages/services']) ?>">Services</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <!-- <li><a href="">Testimonials</a></li> -->
+          <li><a href="<?= Url::to(['pages/contact']) ?>">Contact</a></li>
 
         </ul>
       </nav>
